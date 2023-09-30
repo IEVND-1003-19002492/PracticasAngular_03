@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-6">
+        <h1>Entradas</h1>
+        <div class="mb-3 row">
+            <label for="nombre" class="col-sm-2 col-from-label"> Nombre </label>
+              <div class="col-sm-10">
+                <input name="nombre" [(ngModel)]="nombre"  type="text" class="from-control">
+            </div>
+       </div>
+        <div class="mb-3 row">
+             <label for="numPer" class="col-sm-2 col-from-label"> Cantidad de compradores</label>
+               <div class="col-sm-10">
+                 <input name="numPer" [(ngModel)]="numPer"  type="text" class="from-control">
+             </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="tarjeta" class="col-sm-2 col-from-label"> Cuentas con tarjeta</label>
+            <input type="radio" name="tarjeta" id="tarjeta" value="1" [(ngModel)]="tarjeta"> Si
+            <input type="radio" name="tarjeta" id="tarjeta" value="0" [(ngModel)]="tarjeta"> No
+       </div>
+        <div class="mb-3 row">
+            <h3>Cada boleto cuesta $12.00</h3>
+            <label for="numBoleto" class="col-sm-2 col-from-label">Cantidad de boletos</label>
+            <div class="col-sm-10">
+                <input name="numBoleto" [(ngModel)]="numBoleto"  type="text" class="from-control">
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h1>Salida</h1>
+            <label for="resultado" class="col-sm-2 col-from-label"> Monto a pagar: </label>
+               <div class="col-sm-10">
+                 <p>{{resultado}}</p>
+             </div>
+        </div>
+
+        <div class="col-6">
+            <h1>Aciones</h1>
+            <div class="mb-3 row">
+                <button (click)="calcular()" class="btn btn-primary">Calcular</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
