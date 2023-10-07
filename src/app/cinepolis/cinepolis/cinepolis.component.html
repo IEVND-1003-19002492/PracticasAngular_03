@@ -1,46 +1,50 @@
-<div class="row">
-    <div class="col-6">
-        <h1>Entradas</h1>
-        <div class="mb-3 row">
-            <label for="nombre" class="col-sm-2 col-from-label"> Nombre </label>
-              <div class="col-sm-10">
-                <input name="nombre" [(ngModel)]="nombre"  type="text" class="from-control">
+<html>
+    <div class="row">
+        <div class="col-6 unico">
+            <h1 class="titulo">Entradas</h1>
+            <div class="mb-3 row nombres">
+                <mat-form-field class="example-ripple-form-field">
+                    <mat-label>Nombre</mat-label>
+                    <input name="nombre" matInput [(ngModel)]="nombre"  type="text" class="from-control">
+                </mat-form-field>
+        </div>
+            <div class="mb-3 row numeros">
+                <mat-form-field class="example-ripple-form-field">
+                    <mat-label>Cantidad de compradores</mat-label>
+                    <input name="numPer" matInput [(ngModel)]="numPer"  type="number" class="from-control">
+                </mat-form-field>
             </div>
-       </div>
-        <div class="mb-3 row">
-             <label for="numPer" class="col-sm-2 col-from-label"> Cantidad de compradores</label>
-               <div class="col-sm-10">
-                 <input name="numPer" [(ngModel)]="numPer"  type="text" class="from-control">
-             </div>
-        </div>
-        <div class="mb-3 row">
-            <label for="tarjeta" class="col-sm-2 col-from-label"> Cuentas con tarjeta</label>
-            <input type="radio" name="tarjeta" id="tarjeta" value="1" [(ngModel)]="tarjeta"> Si
-            <input type="radio" name="tarjeta" id="tarjeta" value="0" [(ngModel)]="tarjeta"> No
-       </div>
-        <div class="mb-3 row">
-            <h3>Cada boleto cuesta $12.00</h3>
-            <label for="numBoleto" class="col-sm-2 col-from-label">Cantidad de boletos</label>
-            <div class="col-sm-10">
-                <input name="numBoleto" [(ngModel)]="numBoleto"  type="text" class="from-control">
-            </div>
-        </div>
-
-        <div class="col-6">
-            <h1>Salida</h1>
-            <label for="resultado" class="col-sm-2 col-from-label"> Monto a pagar: </label>
-               <div class="col-sm-10">
-                 <p>{{resultado}}</p>
-             </div>
-        </div>
-
-        <div class="col-6">
-            <h1>Aciones</h1>
             <div class="mb-3 row">
-                <button (click)="calcular()" class="btn btn-primary">Calcular</button>
+                <mat-radio-group aria-label="¿Cuentas con tarjeta?">
+                    <label for="tarjeta" class="col-sm-2 col-from-label">¿Cuentas con tarjeta?</label>
+                    <input class="col-sm-2 col-from-label" type="radio" name="tarjeta" id="tarjeta" value="1" [(ngModel)]="tarjeta"> Si 
+                    <input class="col-sm-2 col-from-label" type="radio" name="tarjeta" id="tarjeta" value="2" [(ngModel)]="tarjeta"> No  
+                </mat-radio-group>
+        </div>
+            <div class="mb-3 row numeros">
+                <mat-form-field class="example-ripple-form-field">
+                    <h3 class="tituloContenedor">**Cada boleto cuesta $12.00</h3>
+                    <mat-label>Cantidad de boletos</mat-label>
+                    <input name="numBoleto" matInput [(ngModel)]="numBoleto"  type="number" class="from-control">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-8">
+            <h1 class="titulo">Salida</h1>
+            <div class="col-sm-10">
+                <p class="texto">{{resultado}}</p>
             </div>
         </div>
 
+        <div class="col-7">
+            <div class="contenedorBotones">
+                <div class="botones">
+                    <button mat-raised-button color="primary" (click)="calcular()" class="btn btn-primary">Calcular</button>
+                </div>
+                <div class="botones">
+                    <button mat-raised-button color="primary" (click)="salir()" class="btn btn-primary">Salir y Recargar</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
+</html>
